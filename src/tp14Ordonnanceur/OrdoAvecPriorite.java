@@ -5,5 +5,41 @@ public class OrdoAvecPriorite implements Ordonnanceur {
 	
 	public OrdoAvecPriorite(int nbPriorites) {
 		files = new OrdoSimple[nbPriorites];
+
+		for (int i = 0 ; i < files.length ; i++){
+			files[i] = new OrdoSimple();
+		}
+	}
+
+	@Override
+	public String toString(){
+		StringBuilder chaine = new StringBuilder();
+		for (OrdoSimple ordonnanceur : files){
+			chaine.append(ordonnanceur);
+		}
+		return chaine.toString();
+	}
+
+	@Override
+	public void entrer(Tache tache){
+		files[tache.getPriorite()].entrer(tache);
+	}
+
+	@Override
+	public Tache sortie(){
+		for (OrdoSimple ordonnanceur : files){
+			if (!ordonnanceur.estVide())
+				return ordonnanceur.sortie();
+		}
+		return null;
+	}
+
+	@Override
+	public boolean estVide() {
+		for (OrdoSimple ordonnanceur : files){
+			if (!ordonnanceur.estVide())
+				return false;
+		}
+		return true;
 	}
 }

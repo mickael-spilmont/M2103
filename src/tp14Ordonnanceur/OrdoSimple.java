@@ -14,7 +14,10 @@ public class OrdoSimple implements Ordonnanceur {
 	}
 	
 	public Tache sortie() {
-		return file.suppression();
+		if (!this.estVide())
+			return file.suppression();
+		else
+			return null;
 	}
 	
 	public boolean estVide() {
