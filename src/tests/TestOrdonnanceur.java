@@ -16,12 +16,23 @@ public class TestOrdonnanceur {
 		ordonnanceur.entrer(tache03);
 		ordonnanceur.entrer(tache04);
 
+		System.out.println(ordonnanceur);
+
 		System.out.println(ordonnanceur.sortie() + "\n");
 		System.out.println(ordonnanceur.sortie() + "\n");
-		System.out.println(ordonnanceur.sortie() + "\n");
-		System.out.println(ordonnanceur.sortie() + "\n");
-		System.out.println(ordonnanceur.sortie() + "\n");
+
+		ordonnanceur.entrer(new TacheSimple("Finir la POO", 0));
+		ordonnanceur.entrer(new TacheSimple("Devoir de math", 1));
+		ordonnanceur.entrer(new TacheSimple("Manger", 2));
+
 		
 		System.out.println(ordonnanceur);
-	}	
+
+		System.out.println(ordonnanceur.sortie() + "\n");
+		System.out.println(ordonnanceur.sortie() + "\n");
+		System.out.println(ordonnanceur.sortie() + "\n");
+		System.out.println(ordonnanceur.sortie() + "\n");
+		System.out.println(ordonnanceur.sortie() + "\n");
+		System.out.println(ordonnanceur.sortie() + "\n");
+	}
 }
