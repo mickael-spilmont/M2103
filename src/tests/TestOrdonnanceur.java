@@ -4,28 +4,21 @@ import tp14Ordonnanceur.*;
 
 public class TestOrdonnanceur {
 	public static void main(String[] args){
-		Tache tache01 = new TacheSimple("sortir le chien", 3);
-		Tache tache02 = new TacheSimple("vider les poubelles", 0);
-		Tache tache03 = new TacheSimple("préparer le repas", 2);
-		Tache tache04 = new TacheSimple("devenir riche", 3);
-		
-		Ordonnanceur ordonnanceur = new OrdoAvecPriorite(4);
-		
-		ordonnanceur.entrer(tache01);
-		ordonnanceur.entrer(tache02);
-		ordonnanceur.entrer(tache03);
-		ordonnanceur.entrer(tache04);
+	    Ordonnanceur ordonnanceur = new OrdoAvecPriorite(4);
+
+	    ordonnanceur.entrer(new TacheSimple("Trouver le donjon", 0));
+	    ordonnanceur.entrer(new TacheSimple("Entrer dans le donjon", 2));
+	    ordonnanceur.entrer(new TacheSimple("Tuer les gobelins", 3));
 
 		System.out.println(ordonnanceur);
 
 		System.out.println(ordonnanceur.sortie() + "\n");
 		System.out.println(ordonnanceur.sortie() + "\n");
 
-		ordonnanceur.entrer(new TacheSimple("Finir la POO", 0));
-		ordonnanceur.entrer(new TacheSimple("Devoir de math", 1));
-		ordonnanceur.entrer(new TacheSimple("Manger", 2));
+		ordonnanceur.entrer(new TacheMoinsSimple("Décimer les orcs", 0, "You kill orcs", 3));
+		ordonnanceur.entrer(new TacheMoinsSimple("Estourbir la liche", 4, "You kill the Lich", 1));
+		ordonnanceur.entrer(new TacheMoinsSimple("Trouver le trésor", 5, "Yhea, I'm RICH !!!", 100000));
 
-		
 		System.out.println(ordonnanceur);
 
 		System.out.println(ordonnanceur.sortie() + "\n");

@@ -22,7 +22,10 @@ public class OrdoAvecPriorite implements Ordonnanceur {
 
 	@Override
 	public void entrer(Tache tache){
-		files[tache.getPriorite()].entrer(tache);
+		if (tache.getPriorite() >= files.length)
+			files[files.length - 1].entrer(tache);
+		else
+			files[tache.getPriorite()].entrer(tache);
 	}
 
 	@Override
