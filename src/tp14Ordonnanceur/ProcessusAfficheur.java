@@ -30,7 +30,7 @@ public class ProcessusAfficheur implements Processus, Tache {
 	@Override
 	public String toString() {
 		StringBuilder chaine = new StringBuilder();
-		chaine.append("Processus afficheur\nPriorité : ").append(priorite);
+		chaine.append("Processus afficheur\nPriorité : ").append(priorite).append("\n");
 		return chaine.toString();
 	}
 }	

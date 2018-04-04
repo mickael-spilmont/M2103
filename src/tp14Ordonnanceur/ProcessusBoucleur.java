@@ -32,7 +32,7 @@ public class ProcessusBoucleur implements Processus, Tache {
 	@Override
 	public String toString() {
 		StringBuilder chaine = new StringBuilder();
-		chaine.append("Processus afficheur\nPriorité : ").append(priorite).append("\nNombre d'execution : ").append(compteurExecution);
+		chaine.append("Processus boucleur\nPriorité : ").append(priorite).append("\nNombre d'execution : ").append(compteurExecution).append("\n");
 		return chaine.toString();
 	}
 }

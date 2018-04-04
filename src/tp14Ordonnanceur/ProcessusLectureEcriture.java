@@ -19,14 +19,16 @@ public class ProcessusLectureEcriture implements Processus, Tache {
 	
 	@Override
 	public void execute() {
-		Scanner scan = new Scanner(System.in);
-		
 		if (compteurExecution == 0) {
+			Scanner scan = new Scanner(System.in);
+			System.out.print("Entrez votre message : ");
 			this.message = scan.nextLine();
 			scan.close();
 		}
 		else
 			System.out.println(message);
+		
+		this.compteurExecution ++;
 	}
 	
 	@Override
@@ -37,7 +39,7 @@ public class ProcessusLectureEcriture implements Processus, Tache {
 	@Override
 	public String toString() {
 		StringBuilder chaine = new StringBuilder();
-		chaine.append("Processus afficheur\nPriorité : ").append(priorite).append("\nNombre d'execution : ").append(compteurExecution);
+		chaine.append("Processus lecture affichage\nPriorité : ").append(priorite).append("\nNombre d'execution : ").append(compteurExecution).append("\n");
 		return chaine.toString();
 	}
 }
