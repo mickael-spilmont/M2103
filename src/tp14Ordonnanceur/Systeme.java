@@ -5,8 +5,8 @@ public class Systeme {
 	public static void main(String[] args) {
 		Ordonnanceur ordonnanceur = new OrdoAvecPriorite(4);
 
-		ordonnanceur.entrer(new ProcessusAfficheur("Mon super process"));
-		ordonnanceur.entrer(new ProcessusBoucleur("Mon 2 eme process", 5));
+		ordonnanceur.entrer(new ProcessusAfficheur("Fox powa !!!"));
+		ordonnanceur.entrer(new ProcessusBoucleur("Fox loop !!!", 5));
 		ordonnanceur.entrer(new ProcessusLectureEcriture());
 		
 		while (!ordonnanceur.estVide()) {
