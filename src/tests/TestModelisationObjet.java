@@ -10,6 +10,8 @@ public class TestModelisationObjet {
 		Piece piece02 = new Piece("8 GB GDDR5", 1552);
 		
 		Element element01 = new Element("Carte graphique");
+		element01.add(piece01);
+		element01.add(piece02);
 		
 		System.out.println(element01);
 		
