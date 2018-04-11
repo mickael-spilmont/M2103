@@ -19,4 +19,11 @@ public class PosteTravail extends Assemblage {
 	public void setUtilisateur(String utilisateur) {
 		this.utilisateur = utilisateur;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder chaine = new StringBuilder();
+		chaine.append("Utilisateur : ").append(utilisateur).append("\n").append(super.toString());
+		return chaine.toString();
+	}
 }

@@ -25,7 +25,11 @@ public abstract class Assemblage {
 	
 	public String toString() {
 		StringBuilder chaine = new StringBuilder();
-		chaine.append(nom).append(" :\n").append(assemblables);
+		chaine.append(nom).append(" :\n");
+		for (Assemblable assemblable : assemblables){
+			chaine.append(assemblable);
+		}
+		chaine.append("\n");
 		return chaine.toString();
 	}
 }
