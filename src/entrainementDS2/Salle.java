@@ -4,27 +4,27 @@ import java.util.ArrayList;
 
 public class Salle {
 
-	private final String IDENTIFIANT;
-	private final String NATURE;
-	private final int CAPACITE;
+	private final String identifiant;
+	private final String nature;
+	private final int capacite;
 	protected List<SeancePlanifiee> planning;
 	
 	public Salle (String identifiant, String nature, int capacite) {
-		this.IDENTIFIANT = identifiant;
-		this.NATURE = nature;
-		this.CAPACITE = capacite;
+		this.identifiant = identifiant;
+		this.nature = nature;
+		this.capacite = capacite;
 		planning = mew ArrayList<>();
 	}
 
-	public String getIDENTIFIANT() {
-		return IDENTIFIANT;
+	public String getIdentifiant() {
+		return identifiant;
 	}
 
-	public String getNATURE() {
-		return NATURE;
+	public String getNature() {
+		return nature;
 	}
 
-	public int getCAPACITE() {
-		return CAPACITE;
+	public int getCapacite() {
+		return capacite;
 	}
 }
