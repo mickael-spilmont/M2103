@@ -4,8 +4,8 @@ public interface Planifiable {
 	
 	public String getNom();
 	public String getNature();
-	public String getDuree();
-	public String getEffectif();
+	public int getDuree();
+	public int getEffectif();
 	public boolean estCompatibleAvec(Salle ressource);
 	public boolean estPlanifiee();
 }
