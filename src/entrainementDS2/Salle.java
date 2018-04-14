@@ -1,6 +1,7 @@
 package entrainementDS2;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Salle {
 
@@ -13,7 +14,7 @@ public class Salle {
 		this.identifiant = identifiant;
 		this.nature = nature;
 		this.capacite = capacite;
-		planning = mew ArrayList<>();
+		planning = new ArrayList<>();
 	}
 
 	public String getIdentifiant() {
