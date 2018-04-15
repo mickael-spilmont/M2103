@@ -57,6 +57,10 @@ public class Salle {
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
 
+		stringBuilder.append("Salle ")
+                .append(identifiant)
+                .append(" :\n");
+
 		for (SeancePlanifiee seancePlanifiee : planning){
 			stringBuilder.append(seancePlanifiee);
 		}

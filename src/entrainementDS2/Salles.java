@@ -28,8 +28,36 @@ public class Salles {
         return null;
     }
 
-    public SeancePlanifiee accueillir() {
+    public SeancePlanifiee accueillir(Seance seance) {
+        SeancePlanifiee seancePlanifiee;
+        for (Salle salle : planning) {
+            seancePlanifiee = salle.accueillir(seance);
 
+            if (seancePlanifiee != null){ return seancePlanifiee; }
+        }
+        return null;
     }
 
+    public List<SeancePlanifiee> planifier(List<Seance> seances) {
+        List<SeancePlanifiee> seancePlanifiees = new ArrayList<>();
+        SeancePlanifiee seancePlanifiee;
+
+        for (Seance seance : seances) {
+            seancePlanifiee = this.accueillir(seance);
+
+            if (seancePlanifiee != null) { seancePlanifiees.add(seancePlanifiee); }
+        }
+
+        return seancePlanifiees;
+    }
+
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (Salle salle : planning) {
+            stringBuilder.append(salle);
+        }
+
+        return stringBuilder.toString();
+    }
 }
