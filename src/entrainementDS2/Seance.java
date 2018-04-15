@@ -48,4 +48,41 @@ public class Seance implements Planifiable{
     protected void setPlanifiee(boolean bool){
         this.estPlanifiee = bool;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append("Cour de ")
+                .append(nom)
+                .append(" ; Séance de ")
+                .append(nature)
+                .append(" ; Dure ")
+                .append(duree)
+                .append("h ; Effectif de ")
+                .append(effectif)
+                .append(" étudiants ; Planifiée : ")
+                .append(estPlanifiee)
+                .append("\n");
+
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj != null && obj instanceof Seance){
+            return this.equals((Seance)obj);
+        }
+        return false;
+    }
+
+    public boolean equals(Seance seance) {
+        if (this.nom.equals(seance.nom)
+                && this.nature.equals(seance.nature)
+                && this.duree == seance.duree
+                && this.effectif == seance.effectif){
+            return true;
+        }
+        return false;
+    }
 }

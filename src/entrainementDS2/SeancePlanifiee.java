@@ -8,6 +8,7 @@ public class SeancePlanifiee extends Seance implements Affichable{
         super(seance.getNom(), seance.getNature(), seance.getDuree(), seance.getEffectif());
         this.salle = salle;
         this.horaireDebut = horaireDebut;
+        this.setPlanifiee(true);
     }
 
     @Override
@@ -31,5 +32,28 @@ public class SeancePlanifiee extends Seance implements Affichable{
 
     Salle getSalle() {
         return salle;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+
+        stringBuilder.append("Cour de ")
+                .append(this.getNom())
+                .append(" ; Séance de ")
+                .append(this.getNature())
+                .append(" ; Dure ")
+                .append(this.getDuree())
+                .append("h ; Debut ")
+                .append(horaireDebut)
+                .append(" ; Fin ")
+                .append(getHoraireFin())
+                .append(" ; Effectif de ")
+                .append(this.getEffectif())
+                .append(" étudiants ; Salle ")
+                .append(this.identifiantSalle())
+                .append("\n");
+
+        return stringBuilder.toString();
     }
 }
