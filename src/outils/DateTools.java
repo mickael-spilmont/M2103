@@ -1,9 +1,13 @@
 
 package outils;
 
+import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
+
+import tpException.FormatDateException;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
@@ -37,8 +41,9 @@ public class DateTools
      * </pre>
      * @param date chaîne de caractères supposée représenter une datevalide au formar "jj/mm/aaaa"
      * @return une instance de LocalDate correspondant à la date fournie sous forme littérale
+     * @throws FormatDateException 
      */
-    public static LocalDate localDateFrom(String date)
+    public static LocalDate localDateFrom(String date) throws java.time.DateTimeException, FormatDateException
     {
         Matcher m = PATTERN.matcher(date);
         if (m.matches()) // ie: "si la date est bien au format correspondant au modèle voulu"
@@ -51,7 +56,7 @@ public class DateTools
 
             return LocalDate.of(annee, mois, jour); // une DateTimeException peut être déclenchée!
         }
-        return null; // pour l'instant (sera à remplacer par une levée d'exception!)
+        throw new FormatDateException("Erreur de format " + date);
         
         // sera à modifier par la suite pour prendre en compte les exceptions possibles!
     }
@@ -63,8 +68,10 @@ public class DateTools
      * </pre>
      * @param message invitation pour la saisie de l'information voulue
      * @return la LocalDate correspondant à la chaîne de caractère lue au clavier
+     * @throws FormatDateException 
+     * @throws DateTimeException 
      */
-    public static LocalDate lireDate(String message)
+    public static LocalDate lireDate(String message) throws DateTimeException, FormatDateException
     {
         String chaine = JOptionPane.showInputDialog(message);
         return DateTools.localDateFrom(chaine);

@@ -24,7 +24,7 @@ public class Manifestation
     }
    */  
     
-    public Manifestation(String nom, String debut, String fin)
+    public Manifestation(String nom, String debut, String fin) throws java.time.DateTimeException, FormatDateException
     {
      //   this(nom, DateTools.localDateFrom(debut), DateTools.localDateFrom(fin)); 
         
