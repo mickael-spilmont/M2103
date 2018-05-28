@@ -36,6 +36,8 @@ public class DeSerialisation {
 					archive = (Document)objet;
 				}
 			}
+			
+			System.out.println(dvd + "\n" + livre + "\n" + archive);
 		}
 		catch (IOException ioe) {
 			System.err.println(ioe);
@@ -43,7 +45,5 @@ public class DeSerialisation {
 		catch (ClassNotFoundException cnfe) {
 			System.err.println(cnfe);
 		}
-		
-		System.out.println(dvd + "\n" + livre + "\n" + archive);
 	}
 }

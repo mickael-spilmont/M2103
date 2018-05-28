@@ -1,5 +1,8 @@
 package tests;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 
 import tp10Heritage.DVD;
@@ -15,15 +18,26 @@ public class testMediatheque {
 		DVD dvd1 = new DVD("hjogs1324", "Matrix", "Chlebowski", 170);
 		Document archive = new Document("fhd576fd");
 		
-		System.out.println(mediatheque.ajouterDocument(livre1));
-		System.out.println(mediatheque.ajouterDocument(dvd1));
-		System.out.println(mediatheque.obtenir("hjogs1324"));
+//		System.out.println(mediatheque.ajouterDocument(livre1));
+//		System.out.println(mediatheque.ajouterDocument(dvd1));
+//		System.out.println(mediatheque.obtenir("hjogs1324"));
+//		
+//		System.out.println(mediatheque.emprunter("gjh42543gs", 123513));
+//		System.out.println(mediatheque.emprunter("gjh42543gs", 123513, LocalDate.now()));
+//		
+//		System.out.println(mediatheque.restitutuer("gjh42543gs"));
+//		System.out.println(mediatheque.restitutuer("gjh42543gs"));
 		
-		System.out.println(mediatheque.emprunter("gjh42543gs", 123513));
-		System.out.println(mediatheque.emprunter("gjh42543gs", 123513, LocalDate.now()));
+		try {
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("../mediatheque"));
+			oos.writeObject(mediatheque);
+			oos.close();
+		}
+		catch (IOException ioe) {
+			System.err.println(ioe);
+		}
 		
-		System.out.println(mediatheque.restitutuer("gjh42543gs"));
-		System.out.println(mediatheque.restitutuer("gjh42543gs"));
+		System.out.println(mediatheque);
 	}
 
 }
