@@ -1,9 +1,10 @@
 package tp10Heritage;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Mediatheque {
+public class Mediatheque implements Serializable{
 	ArrayList<Document> documents;
 	
 	public Mediatheque() {

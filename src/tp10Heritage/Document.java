@@ -1,8 +1,9 @@
 package tp10Heritage;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Document {
+public class Document implements Serializable {
 	private final String cote;
 	private int numEmprunteur;
 	private LocalDate dateEmprunt;

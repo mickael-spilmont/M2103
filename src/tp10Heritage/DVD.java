@@ -1,6 +1,8 @@
 package tp10Heritage;
 
-public class DVD extends Document{
+import java.io.Serializable;
+
+public class DVD extends Document implements Serializable{
 	private String titre;
 	private String realisateur;
 	private int duree;

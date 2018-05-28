@@ -1,6 +1,8 @@
 package tp10Heritage;
 
-public class Livre extends Document {
+import java.io.Serializable;
+
+public class Livre extends Document implements Serializable{
 	private String titre;
 	private String auteur;
 	private String editeur;
