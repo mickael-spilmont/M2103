@@ -1,5 +1,7 @@
 package jeuDeRole;
 
+import java.util.Random;
+
 public abstract class Personnage {
 
     private final String NOM;
@@ -13,7 +15,38 @@ public abstract class Personnage {
         pv = 100;
     }
 
-    abstract public int attaquer();
+    public String getNOM() {
+        return NOM;
+    }
 
-    abstract public void subirAttaque();
+    public int getXp() {
+        return xp;
+    }
+
+    public int getPv() {
+        return pv;
+    }
+
+    public boolean isVivant() {
+        return vivant;
+    }
+
+    public void gagnerXp(){
+        xp ++;
+    }
+
+    protected int tirage(){
+        Random dice = new Random();
+        return dice.nextInt(xp + 1);
+    }
+
+    abstract public int attaquer(Personnage personnage);
+
+    public void subirAttaque(int force){
+        pv -= force;
+
+        if (pv <= 0){
+            vivant = false;
+        }
+    }
 }
